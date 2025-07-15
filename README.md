@@ -1,4 +1,4 @@
-# Tesla-Stock-Exploratory-Analysis
+# Tesla Stock Exploratory Analysis
 
 Dataset downloaded from: https://www.kaggle.com/datasets/adilshamim8/tesla-stock-price-history.
 
