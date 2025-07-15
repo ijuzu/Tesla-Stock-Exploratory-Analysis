@@ -16,7 +16,7 @@ First, I calculated daily average price change (between market open and close) a
 Based on this, I was interested in taking a closer look into which months/quarters had higher numbers of spike days. I used Tableau to visualize the number of "Spike days" per quarter: 
 
 # Visualization of Spike Days Per Quarter
-![Visualization of "Spike Days" Per Quarter](https://github.com/ijuzu/Tesla-Stock-Exploratory-Analysis/blob/main/Quarterly%20Summary.png)
+![Visualization of "Spike Days" Per Quarter]([Visualization of Quarterly Spikes.png](https://github.com/ijuzu/Tesla-Stock-Exploratory-Analysis/blob/main/Visualization%20of%20Quarterly%20Spikes.png))
 
 It looks like 2020 and 2022 had the highest numbers of spike days, so I investigated a bit further into why: 
 
