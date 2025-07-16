@@ -15,15 +15,15 @@ To investigate these patterns further, I calculated the daily average price chan
 # Yearly Summary Table
 ![Tesla Stock Price - Yearly Summary](https://github.com/ijuzu/Tesla-Stock-Exploratory-Analysis/blob/main/Yearly%20Summary%20Table.PNG)
 
-I also looked at the volume of Tesla stock traded by month, and compared this with the average percent change.
-# [Monthly Volume of Tesla Stock Traded]([https://public.tableau.com/app/profile/ijuzu/viz/MonthlyVolumeofTeslaStockTraded2010-2025/MontlyVolume](https://public.tableau.com/views/MonthlyVolumeofTeslaStockTraded2010-2025/MontlyVolume?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link))
-![Monthly Volume of Tesla Stock Traded](https://github.com/ijuzu/Tesla-Stock-Exploratory-Analysis/blob/main/Montly%20Trading%20Volume.png)
-
+I also looked at the volume of Tesla stock traded by month, and compared this with the average percent change. I was interested in seeing if there would be any correlation in average daily percent change and the volume traded.
 # [Monthly Volume of Tesla Stock Traded and Average Percent Daily Change](https://public.tableau.com/views/MonthlyVolumeofTeslaStockTradedwithAverageDailyChange2010-2025/MontlyVolume?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 ![Monthly Volume of Tesla Stock Traded With Average Percent Change](https://github.com/ijuzu/Tesla-Stock-Exploratory-Analysis/blob/main/Montly%20Volume%20With%20Average%20Percent%20Daily%20Change.png)
 
-Based on these insights, I was interested in taking a closer look into which months/quarters had higher numbers of spike days. I used Tableau to visualize the number of "Spike days" per quarter: 
+I then calculated monthly return (by using the closing values for the beginning and end of the month) and visualized this along with the volume traded. 
+# [Tesla Monthly Return and Volume Traded](https://public.tableau.com/views/TeslaMontlyReturnandVolumeTraded2010-2025/MonthlyReturnPercentage?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+![Tesla Monthly Return and Volume Traded](https://github.com/ijuzu/Tesla-Stock-Exploratory-Analysis/blob/main/Tesla%20Monthly%20Return%20Percentage%20and%20Volume%20Traded.png)
 
+I was interested in then taking a closer look into which months/quarters had higher numbers of spike days, and visualized the number of "Spike days" per quarter.
 # [Visualization of Spike Days Per Quarter](https://public.tableau.com/views/TeslaSpikeDaysByQuarter2010-2025/QuarterlySummary?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 ![Visualization of "Spike Days" Per Quarter](https://github.com/ijuzu/Tesla-Stock-Exploratory-Analysis/blob/main/Visualization%20of%20Quarterly%20Spikes.png)
 
