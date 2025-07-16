@@ -13,6 +13,9 @@ First, I calculated daily average price change (between market open and close) a
 # Yearly Summary Table
 ![Tesla Stock Price - Yearly Summary](https://github.com/ijuzu/Tesla-Stock-Exploratory-Analysis/blob/main/Yearly%20Summary%20Table.PNG)
 
+I also looked at the volume of Tesla stock traded by month: 
+![]()
+
 Based on this, I was interested in taking a closer look into which months/quarters had higher numbers of spike days. I used Tableau to visualize the number of "Spike days" per quarter: 
 
 # Visualization of Spike Days Per Quarter
