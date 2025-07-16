@@ -1,0 +1,142 @@
+SELECT *
+FROM tesla_stock_data;
+
+SELECT *
+FROM tesla_stock_data
+WHERE Volume IS NULL;
+ 
+ SELECT DISTINCT(Close)
+ FROM tesla_stock_data;
+ 
+ SELECT Date, High, Low 
+ FROM tesla_stock_data;
+ 
+ SELECT Date, Open, Close
+ FROM tesla_stock_data
+ WHERE Open > Close;
+ 
+ SELECT Date, Close - Open, Volume
+ FROM tesla_stock_data
+ORDER BY Date, Close - Open;
+
+SELECT Date, High - Low
+FROM tesla_stock_data
+ORDER BY 2 DESC;
+
+SELECT *
+FROM tesla_stock_data
+WHERE (High - Low) > 50;
+
+SELECT * 
+FROM tesla_stock_data
+WHERE Volume > 400000000 AND Close - Open > 2;
+ 
+SELECT Date,
+STR_TO_DATE(Date, '%Y-%m-%d')
+FROM tesla_stock_data;
+ 
+ UPDATE tesla_stock_data
+ SET Date = STR_TO_DATE(Date, '%Y-%m-%d');
+ 
+ SELECT *
+ FROM tesla_stock_data;
+
+SELECT Date, Close - Open AS daily_change
+FROM tesla_stock_data
+ORDER BY daily_change DESC
+LIMIT 5;
+
+WITH price_changes AS (
+SELECT t1.Date, t1.Close AS current_close, t2.Close AS previous_close,
+(t1.Close - t2.Close) / t2.Close * 100 AS percent_change
+FROM tesla_stock_data t1
+JOIN tesla_stock_data t2 ON t1.Date = DATE_ADD(t2.Date, INTERVAL 1 DAY)
+)
+SELECT * 
+FROM price_changes
+WHERE ABS(percent_change) > 15
+ORDER BY percent_change DESC;
+
+-- Monthly summary
+SELECT
+DATE_FORMAT(Date, '%Y-%m') AS month, 
+COUNT(*) AS trading_days,
+AVG((Close - Open) / Open * 100) AS avg_daily_change_pct,
+MAX(High) AS highest_price,
+MIN(Low) AS lowest_price,
+SUM(
+CASE 
+WHEN ABS((Close - Open) / Open * 100) > 5 THEN 1 
+ELSE 0 
+END
+) AS spike_days
+FROM tesla_stock_data
+GROUP BY month
+ORDER BY month;
+
+-- Yearly summary
+SELECT
+YEAR(date) AS year, 
+COUNT(*) AS trading_days,
+AVG((Close - Open) / Open * 100) AS avg_daily_change_pct,
+MAX(High) AS highest_price,
+MIN(Low) AS lowest_price,
+SUM(
+CASE 
+WHEN ABS((Close - Open) / Open * 100) > 5 THEN 1 
+ELSE 0 
+END
+) AS spike_days
+FROM tesla_stock_data
+GROUP BY year
+ORDER BY year;
+
+
+-- Quarterly summary
+SELECT 
+YEAR(Date) AS year,
+QUARTER(Date) AS quarter,
+COUNT(*) AS trading_days,
+  AVG((Close - Open) / Open * 100) AS avg_daily_change_pct,
+  MAX(High) AS highest_price,
+  MIN(Low) AS lowest_price,
+  SUM(
+  CASE 
+  WHEN ABS((Close - Open) / Open * 100) > 5 THEN 1 
+  ELSE 0 
+  END
+  ) AS spike_days
+FROM tesla_stock_data
+GROUP BY year, quarter
+ORDER BY year, quarter;
+
+SELECT
+DATE_FORMAT(Date, '%Y-%m') AS month, 
+SUM(Volume) as monthly_volume,
+AVG((Close - Open) / Open * 100) AS avg_daily_change_pct,
+MAX(High) AS highest_price,
+MIN(Low) AS lowest_price
+FROM tesla_stock_data
+GROUP BY month
+ORDER BY month;
+
+WITH beg_end_month AS (
+SELECT
+DATE_FORMAT(Date, '%Y-%m') AS month,
+MIN(Date) AS first_day,
+MAX(Date) AS last_day
+FROM tesla_stock_data
+GROUP BY month
+),
+monthly_returns AS (
+SELECT
+beg_end_month.month,
+t1.Close AS first_close,
+t2.Close AS last_close,
+(t2.Close - t1.Close) / t1.Close * 100 AS monthly_return_pct
+FROM beg_end_month 
+JOIN tesla_stock_data t1 ON t1.Date = beg_end_month.first_day
+JOIN tesla_stock_data t2 ON t2.Date = beg_end_month.last_day
+)
+SELECT * FROM monthly_returns
+ORDER BY month;
