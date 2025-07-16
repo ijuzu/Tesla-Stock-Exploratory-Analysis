@@ -1,6 +1,8 @@
 # Exploratory Analysis of Tesla Stock Data
 Dataset source: https://www.kaggle.com/datasets/adilshamim8/tesla-stock-price-history
 
+Code is located [here](https://github.com/ijuzu/Tesla-Stock-Exploratory-Analysis/blob/main/Tesla_stock_data.csv)
+
 # Introduction 
 This dataset, originally sourced from Yahoo Finance, provides a history of Tesla stock prices from 2010 to 2025, with information on daily opening and closing prices, highest and lowest prices, and total trading volume.  
 
