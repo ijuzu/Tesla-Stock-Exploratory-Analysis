@@ -1,33 +1,35 @@
-# Exploratory Analysis of Tesla Stock Data
+# Exploratory Analysis of Tesla Stock Data (2010-2025)
 Dataset source: https://www.kaggle.com/datasets/adilshamim8/tesla-stock-price-history
 
-Code is located [here](https://github.com/ijuzu/Tesla-Stock-Exploratory-Analysis/blob/main/Tesla_stock_data.csv)
+Code: [Tesla Stock Exploratory Analysis](https://github.com/ijuzu/Tesla-Stock-Exploratory-Analysis/blob/main/Tesla_stock_data.csv)
 
 # Introduction 
-This dataset, originally sourced from Yahoo Finance, provides a history of Tesla stock prices from 2010 to 2025, with information on daily opening and closing prices, highest and lowest prices, and total trading volume.  
+This dataset was downloaded from Kaggle and originally sourced from Yahoo Finance. It provides a history of Tesla stock prices starting from 2010, with information on daily opening and closing prices, highest and lowest prices, and total trading volume.  
 
-I used the dataset to perform some exploratory data analysis and visualize trends on Tableau. The links to each Tableau graph are inlcluded for easier visualization and interaction. 
+I used this dataset to perform some exploratory data analysis and visualize trends on Tableau. This project is still in progress.
 
 # Data Exploration
-I first verified that the data was clean (the Kaggle description noted that it had already been cleaned) and that there were no discepancies in the ways the data was formatted. 
-I then expolored general trends in the data, noting where there was a large volume traded or where the price drastically changed during the day or between days. 
+I first verified that the data was clean (the Kaggle description noted that it had already been cleaned, but I double checked for null values and duplicates) and that there were no discrepancies in the ways the data was formatted.
+I then explored general trends in the data, noting where there was a large volume traded or where the price drastically changed during the day or between days. 
 
-To investigate these patterns further, I calculated the daily average price change (between market open and close) and identified "spike days" to create monthly, quarterly, and yearly summary tables. "Spike days" refer to trading days in which Tesla's stock price moved more than ±5% between the market open and close. 
+For example, I looked into the volume of Tesla stock traded by month along with the average daily percent change (percent change between market open and close). I was interested in seeing if there would be any correlation in average daily percent change and the volume traded.
+# [Monthly Volume of Tesla Stock Traded and Average Percent Daily Change](https://public.tableau.com/views/MonthlyVolumeofTeslaStockTradedwithAverageDailyChange2010-2025/MontlyVolume?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+![Monthly Volume of Tesla Stock Traded With Average Percent Change](https://github.com/ijuzu/Tesla-Stock-Exploratory-Analysis/blob/main/Montly%20Volume%20With%20Average%20Percent%20Daily%20Change.png) 
 
+I calculated monthly return (by using the closing values for the beginning and end of the month) and visualized this along with the volume traded:
+# [Tesla Monthly Return and Volume Traded](https://public.tableau.com/views/TeslaMontlyReturnandVolumeTraded2010-2025/MonthlyReturnPercentage?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+![Tesla Monthly Return and Volume Traded](https://github.com/ijuzu/Tesla-Stock-Exploratory-Analysis/blob/main/Tesla%20Monthly%20Return%20Percentage%20and%20Volume%20Traded.png)
+The peak in May 2013 is particularly intriguing, where the monthly return percentage was 83.5 - the highest during this 15 year history. 
+
+To investigate further, I identified "spike days" to create monthly, quarterly, and yearly summary tables. "Spike days" refer to trading days in which Tesla's stock price moved more than ±5% between the market open and close. 
 # Yearly Summary Table
 ![Tesla Stock Price - Yearly Summary](https://github.com/ijuzu/Tesla-Stock-Exploratory-Analysis/blob/main/Yearly%20Summary%20Table.PNG)
 
-I also looked at the volume of Tesla stock traded by month, and compared this with the average percent change. I was interested in seeing if there would be any correlation in average daily percent change and the volume traded.
-# [Monthly Volume of Tesla Stock Traded and Average Percent Daily Change](https://public.tableau.com/views/MonthlyVolumeofTeslaStockTradedwithAverageDailyChange2010-2025/MontlyVolume?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
-![Monthly Volume of Tesla Stock Traded With Average Percent Change](https://github.com/ijuzu/Tesla-Stock-Exploratory-Analysis/blob/main/Montly%20Volume%20With%20Average%20Percent%20Daily%20Change.png)
 
-I then calculated monthly return (by using the closing values for the beginning and end of the month) and visualized this along with the volume traded. 
-# [Tesla Monthly Return and Volume Traded](https://public.tableau.com/views/TeslaMontlyReturnandVolumeTraded2010-2025/MonthlyReturnPercentage?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
-![Tesla Monthly Return and Volume Traded](https://github.com/ijuzu/Tesla-Stock-Exploratory-Analysis/blob/main/Tesla%20Monthly%20Return%20Percentage%20and%20Volume%20Traded.png)
-
-I was interested in then taking a closer look into which months/quarters had higher numbers of spike days, and visualized the number of "Spike days" per quarter.
+I was interested in then taking a closer look into which months/quarters had higher numbers of spike days and visualized the number of "Spike days" per quarter.
 # [Visualization of Spike Days Per Quarter](https://public.tableau.com/views/TeslaSpikeDaysByQuarter2010-2025/QuarterlySummary?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 ![Visualization of "Spike Days" Per Quarter](https://github.com/ijuzu/Tesla-Stock-Exploratory-Analysis/blob/main/Visualization%20of%20Quarterly%20Spikes.png)
 
+Then, I wanted to dig into 2020 and 2022.
 
 
