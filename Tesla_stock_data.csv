@@ -1,6 +1,8 @@
 SELECT *
 FROM tesla_stock_data;
 
+DESCRIBE tesla_stock_data;
+
 SELECT *
 FROM tesla_stock_data
 WHERE Volume IS NULL;
@@ -9,7 +11,7 @@ WHERE Volume IS NULL;
  FROM tesla_stock_data;
  
  SELECT Date, High, Low 
- FROM tesla_stock_data;
+ FROM tesla_stock_data; 
  
  SELECT Date, Open, Close
  FROM tesla_stock_data
@@ -91,7 +93,6 @@ FROM tesla_stock_data
 GROUP BY year
 ORDER BY year;
 
-
 -- Quarterly summary
 SELECT 
 YEAR(Date) AS year,
@@ -108,7 +109,7 @@ COUNT(*) AS trading_days,
   ) AS spike_days
 FROM tesla_stock_data
 GROUP BY year, quarter
-ORDER BY year, quarter;
+ORDER BY spike_days DESC;
 
 SELECT
 DATE_FORMAT(Date, '%Y-%m') AS month, 
@@ -138,5 +139,30 @@ FROM beg_end_month
 JOIN tesla_stock_data t1 ON t1.Date = beg_end_month.first_day
 JOIN tesla_stock_data t2 ON t2.Date = beg_end_month.last_day
 )
-SELECT * FROM monthly_returns
+SELECT * 
+FROM monthly_returns
 ORDER BY month;
+
+SELECT 
+Date,
+(Close - Open) / Open * 100 AS daily_pct_change
+FROM tesla_stock_data
+WHERE DATE_FORMAT(Date, '%Y') = '2020'
+ORDER BY Date;
+-- look into 2020 and 2022 specifically 
+SELECT 
+Date,
+YEAR(Date) AS trading_year,
+((Close - Open) / Open) * 100 AS daily_change_pct,
+Volume
+FROM tesla_stock_data
+WHERE YEAR(Date) IN (2020, 2022)
+AND ABS((Close - Open) / Open * 100) > 5
+ORDER BY Date;
+
+SELECT 
+Date, Open, Close, Volume,
+((Close - Open) / Open) * 100 AS daily_pct_change
+FROM tesla_stock_data
+WHERE YEAR(Date) IN (2017)
+ORDER BY Date;
