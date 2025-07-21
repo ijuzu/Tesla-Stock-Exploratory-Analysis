@@ -30,11 +30,17 @@ I was interested in then taking a closer look into which months/quarters had hig
 # [Visualization of Spike Days Per Quarter](https://public.tableau.com/views/TeslaSpikeDaysByQuarter2010-2025/QuarterlySummary?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 ![Visualization of "Spike Days" Per Quarter](https://github.com/ijuzu/Tesla-Stock-Exploratory-Analysis/blob/main/Visualization%20of%20Quarterly%20Spikes.png)
 
-I noticed that 2020 and 2022 had much higher numbers of spikes compared to any of the other years. Therefore, I took a closer look into both years. I first visualized the daily percent change along with the volume traded to see if there might be any interesting patterns, especially in Q1 and Q3 (2020) and Q1, Q2, and Q4 (2022) where there were the highest number of spike days: 
+I noticed that 2020 and 2022 had much higher numbers of spikes compared to any of the other years. Therefore, I took a closer look into both years. I first visualized the daily percent change along with the volume traded to see if there might be any interesting patterns, especially in Q1 and Q3 (2020) and Q1, Q2, and Q4 (2022) where there were the highest number of spike days. I chose to visualize these along with 2017, which was the year of fewest spike days (only 3 in total):
+
+# Tesla Stock: [Volume Traded and Daily Percent Change in 2017]
+
 # [Tesla Stock: Volume Traded and Daily Percent Change in 2020](https://public.tableau.com/views/TeslaStockVolumeTradedandDailyPercentChangein2020/Sheet9?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 ![Volume Traded and Daily Percent Change in 2020](https://github.com/ijuzu/Tesla-Stock-Exploratory-Analysis/blob/main/Tesla%20Stock%20-%20Volume%20Traded%20and%20Daily%20Percent%20Change%20in%202020.png)
 
-# [Tesla Stock: Volume Traded and Daily Percent Change in 2022](
+# [Tesla Stock: Volume Traded and Daily Percent Change in 2022](https://public.tableau.com/views/TeslaStockVolumeTradedandDailyPercentChangein2022/Sheet11?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+![Volume Traded and Daily Percent Change in 2022](https://github.com/ijuzu/Tesla-Stock-Exploratory-Analysis/blob/main/Tesla%20Stock%20Volume%20Traded%20and%20Daily%20Percent%20Change%20in%202022.png)
+
+ 
 
 
 
